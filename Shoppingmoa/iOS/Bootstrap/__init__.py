@@ -26,21 +26,21 @@ TEST_CONFIG = TestConfig()
 
 def initialize_bp(target, argv):
     TEST_CONFIG.port = "4723"
-    TEST_CONFIG.sdkver = "10"
-    TEST_CONFIG.dname = "Galaxy S10"
-    TEST_CONFIG.udid = "R39M3084V5A"
-    TEST_CONFIG.auto = "UIAutomator2"
-    TEST_CONFIG.ratio = "3040 x 1440"
-    TEST_CONFIG.os = "Android"
+    TEST_CONFIG.sdkver = "13.4.1"
+    TEST_CONFIG.dname = "iPhone 11 Pro Max"
+    TEST_CONFIG.udid = "00008030-0002712A36E0802E"
+    TEST_CONFIG.auto = "XCUITest"
+    TEST_CONFIG.bundleId = "buzzni.homeshoppingmoa.webapp.dev"
+    TEST_CONFIG.ratio = "2688 x 1242"
+    TEST_CONFIG.os = "iOS"
     TEST_CONFIG.user_name = "billy"
     TEST_CONFIG.password = "billy"
-    app = '/Users/billy/PycharmProjects/Shoppingmoa/APKs/shoppingmoa.apk'
 
     TEST_CONFIG.driver = webdriver.Remote(
         command_executor=f'http://127.0.0.1:{TEST_CONFIG.port}/wd/hub',
         desired_capabilities={
-            'app': app,
-            "platformName": "Android",
+            "platformName": "iOS",
+            "bundleId": TEST_CONFIG.bundleId,
             "appium:automationName": TEST_CONFIG.auto,
             "platformVersion": TEST_CONFIG.sdkver,
             "deviceName": TEST_CONFIG.dname,

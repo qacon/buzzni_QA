@@ -58,7 +58,7 @@ class Purchase_product(testModule):
                 # except:
                 #     pass
                 self.interact_by_xpath('//android.widget.TextView[@text="홈"]', search_sec=20, click=False) # 홈 버튼 노출 확인
-
+                self.interact_by_xpath('//android.widget.TextView[@text="홈"]', search_sec=20, click=False)
                 # 데브앱
                 self.interact_by_xpath('//android.widget.TextView[@text="마이메뉴"]', search_sec=20) # 마이메뉴 클릭
                 TCFG.driver.swipe(217, 1660, 217, 200, 10)
@@ -70,7 +70,7 @@ class Purchase_product(testModule):
                 sleep(4)
                 self.interact_by_xpath('//*[contains(@text, "검색")]', search_sec=20) # 검색 클릭
                 # self.interact_by_xpath('//android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.widget.Button[1]', search_sec=7) # 검색 클릭
-                TouchAction(TCFG.driver).tap(None, 529, 812, 1).perform() # 쵸파_테스트 자동화 상품 클릭 닫기
+                TouchAction(TCFG.driver).tap(None, 529, 812, 1).perform() # 쵸파_테스트 자동화 상품 클릭
                 sleep(1)
                 self.interact_by_xpath('//*[contains(@text, "구매하기")]', search_sec=20) # 구매하기 클릭
                 self.interact_by_xpath('//*[contains(@text, "바로구매")]', search_sec=20) # 바로구매 클릭
@@ -105,7 +105,7 @@ class Purchase_product(testModule):
                 sleep(4)
                 self.interact_by_id('com.buzzni.android.subapp.shoppingmoa.dev:id/claim_product_next_btn', search_sec=20) # 다음 버튼 클릭
                 sleep(4)
-                self.interact_by_xpath('//*[@text="주문실수"]', search_sec=20) # 주문실수 버튼 클릭
+                self.interact_by_xpath('//*[contains(@text, "주문실수")]', search_sec=20) # 주문실수 버튼 클릭
                 sleep(4)
                 self.interact_by_id('com.buzzni.android.subapp.shoppingmoa.dev:id/claim_reason_radio_memo', search_sec=20, send_keys_msg="주문취소 테스트입니다!!!", click=False) # 상세사유 입력
                 sleep(4)
@@ -155,7 +155,7 @@ class Purchase_product(testModule):
                 # self.interact_by_xpath('//android.widget.Button[@text="로그인"]', search_sec=7) # 로그인 클릭
             except:
                 # if loop_count == (TCFG.check_loop_count-1):
-                if loop_count == 3:
+                if loop_count == 0:
                     print("Error!")
                     self.assertEqual(0, 1)
                     break
