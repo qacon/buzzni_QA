@@ -3,49 +3,23 @@
 from  __future__ import print_function
 from unittest import TestLoader, TestSuite
 from HtmlTestRunner import HTMLTestRunner
-from time import *
-from datetime import *
-from Category import *
-from Home import *
-from Home2 import *
-from My_Etude import *
-from Footer import *
-from Search import *
-from Cart import *
-from Purchase import *
-from NonLogin import *
-from Etc import *
+from Login import *
 from email.message import EmailMessage
 import datetime
-import sys
 import os
-import io
-import sys
 import smtplib
-import json
-from Bootstrap import TEST_CONFIG as TCFG
 
 # with open('/Users/tsquare/Desktop/Git/AP/info.json') as json_file:
-with open('C:\\Users\\TSQUARE\\Documents\\Git\\AP\\info.json') as json_file:
-    json_data = json.load(json_file)
-    keylist = list(json_data.keys())
-    json_string = json_data[sys.argv[1]]
+# with open('C:\\Users\\TSQUARE\\Documents\\Git\\AP\\info.json') as json_file:
+#     json_data = json.load(json_file)
+#     keylist = list(json_data.keys())
+#     json_string = json_data[sys.argv[1]]
+#
+#     dname = json_string['dname']
 
-    dname = json_string['dname']
+s1 = TestLoader().loadTestsFromTestCase(Login)
 
-s1 = TestLoader().loadTestsFromTestCase(Category)
-s2 = TestLoader().loadTestsFromTestCase(Home)
-# s3 = TestLoader().loadTestsFromTestCase(Home2)
-s4 = TestLoader().loadTestsFromTestCase(My_Etude)
-s5 = TestLoader().loadTestsFromTestCase(Footer)
-s6 = TestLoader().loadTestsFromTestCase(Search)
-s7 = TestLoader().loadTestsFromTestCase(Cart)
-# s8 = TestLoader().loadTestsFromTestCase(Purchase)
-s9 = TestLoader().loadTestsFromTestCase(NonLogin)
-s10 = TestLoader().loadTestsFromTestCase(Etc)
-
-# suite = TestSuite([s1])
-suite = TestSuite([s1, s2, s4, s5, s6, s7, s9, s10])
+suite = TestSuite([s1])
 
 daytime = datetime.datetime.now()
 dt = daytime.strftime("%Y-%m-%d_%H-%M-%S")
