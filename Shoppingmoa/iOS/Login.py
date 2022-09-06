@@ -50,6 +50,10 @@ class Login(testModule):
                     self.interact_by_id('timeline_live_child_small_bg', search_sec=10) # 첫번째상품 클릭
                 except:
                     self.interact_by_id('timeline_live_child_large_preview', search_sec=10) # 첫번째상품 클릭
+                try:
+                    self.interact_by_xpath('timeline_live_child_large_preview', search_sec=5) # 품절된 상품일 경우 pass
+                except:
+
                 self.interact_by_id('product_detail_buy_button', search_sec=20) # 구매하기 클릭
                 self.interact_by_xpath('//android.view.View[@content-desc="장바구니"]', search_sec=20) # 장바구니 클릭
                 self.interact_by_xpath('(//android.view.View[@content-desc="장바구니"])[1]', search_sec=20) # 장바구니 클릭

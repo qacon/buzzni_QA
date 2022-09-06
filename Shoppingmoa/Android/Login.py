@@ -58,6 +58,13 @@ class Login(testModule):
                     self.interact_by_id('timeline_live_child_small_bg', search_sec=10) # 첫번째상품 클릭
                 except:
                     self.interact_by_id('timeline_live_child_large_preview', search_sec=10) # 첫번째상품 클릭
+                try:
+                    self.interact_by_xpath('//*[contains(@text,"품절")]', search_sec=8, click=False) # 품절된 상품일 경우 pass
+                    print("1 Passed")
+                    TCFG.is_passed = True
+                    break
+                except:
+                    pass
                 self.interact_by_id('product_detail_buy_button', search_sec=20) # 구매하기 클릭
                 self.interact_by_xpath('//*[contains(@content-desc,"장바구니")]', search_sec=20) # 장바구니 클릭
                 self.interact_by_xpath('(//android.view.View[@content-desc="장바구니"])[1]', search_sec=20) # 장바구니 클릭
@@ -96,6 +103,13 @@ class Login(testModule):
                     self.interact_by_id('timeline_live_child_small_bg', search_sec=10) # 첫번째상품 클릭
                 except:
                     self.interact_by_id('timeline_live_child_large_preview', search_sec=10) # 첫번째상품 클릭
+                try:
+                    self.interact_by_xpath('//*[contains(@text,"품절")]', search_sec=8, click=False) # 품절된 상품일 경우 pass
+                    print("2 Passed")
+                    TCFG.is_passed = True
+                    break
+                except:
+                    pass
                 self.interact_by_id('product_detail_buy_button', search_sec=20, wait_sec=10) # 구매하기 클릭
                 TouchAction(TCFG.driver).tap(None, 1307, 414, 1).perform() # 장바구니 클릭 클릭
                 sleep(3)
@@ -135,6 +149,13 @@ class Login(testModule):
                     self.interact_by_id('timeline_live_child_small_bg', search_sec=10) # 첫번째상품 클릭
                 except:
                     self.interact_by_id('timeline_live_child_large_preview', search_sec=10) # 첫번째상품 클릭
+                try:
+                    self.interact_by_xpath('//*[contains(@text,"품절")]', search_sec=8, click=False) # 품절된 상품일 경우 pass
+                    print("3 Passed")
+                    TCFG.is_passed = True
+                    break
+                except:
+                    pass
                 self.interact_by_id('product_detail_buy_button', search_sec=20) # 구매하기 클릭
                 try:
                     self.interact_by_xpath('//android.widget.Button[@text="오늘 그만 보기"]', search_sec=5) # 오늘은 그만보기 클릭
@@ -178,6 +199,13 @@ class Login(testModule):
                     self.interact_by_id('timeline_live_child_small_bg', search_sec=10) # 첫번째상품 클릭
                 except:
                     self.interact_by_id('timeline_live_child_large_preview', search_sec=10) # 첫번째상품 클릭
+                try:
+                    self.interact_by_xpath('//*[contains(@text,"품절")]', search_sec=8, click=False) # 품절된 상품일 경우 pass
+                    print("4 Passed")
+                    TCFG.is_passed = True
+                    break
+                except:
+                    pass
                 self.interact_by_id('product_detail_buy_button', search_sec=20) # 구매하기 클릭
                 try:
                     self.interact_by_xpath('//*[contains(@text, "오늘은")]', search_sec=20) # 오늘은 그만보기 클릭
@@ -232,6 +260,13 @@ class Login(testModule):
                     self.interact_by_id('timeline_live_child_small_bg', search_sec=10) # 첫번째상품 클릭
                 except:
                     self.interact_by_id('timeline_live_child_large_preview', search_sec=10) # 첫번째상품 클릭
+                try:
+                    self.interact_by_xpath('//*[contains(@text,"품절")]', search_sec=8, click=False) # 품절된 상품일 경우 pass
+                    print("5 Passed")
+                    TCFG.is_passed = True
+                    break
+                except:
+                    pass
                 self.interact_by_id('product_detail_buy_button', search_sec=20) # 구매하기 클릭
                 try:
                     self.interact_by_xpath('//*[contains(@text, "오늘")]', search_sec=20) # 오늘은 그만보기 클릭
@@ -267,6 +302,13 @@ class Login(testModule):
                     self.interact_by_id('timeline_live_child_small_bg', search_sec=10) # 첫번째상품 클릭
                 except:
                     self.interact_by_id('timeline_live_child_large_preview', search_sec=10) # 첫번째상품 클릭
+                try:
+                    self.interact_by_xpath('//*[contains(@text,"품절")]', search_sec=8, click=False) # 품절된 상품일 경우 pass
+                    print("6 Passed")
+                    TCFG.is_passed = True
+                    break
+                except:
+                    pass
                 self.interact_by_id('product_detail_buy_button', search_sec=20) # 구매하기 클릭
                 try:
                     self.interact_by_xpath('//*[contains(@text, "오늘")]', search_sec=20) # 오늘은 그만보기 클릭
@@ -310,6 +352,13 @@ class Login(testModule):
                     self.interact_by_id('timeline_live_child_small_bg', search_sec=10) # 첫번째상품 클릭
                 except:
                     self.interact_by_id('timeline_live_child_large_preview', search_sec=10) # 첫번째상품 클릭
+                try:
+                    self.interact_by_xpath('//*[contains(@text,"품절")]', search_sec=8, click=False) # 품절된 상품일 경우 pass
+                    print("7 Passed")
+                    TCFG.is_passed = True
+                    break
+                except:
+                    pass
                 self.interact_by_id('product_detail_buy_button', search_sec=20) # 구매하기 클릭
                 try:
                     self.interact_by_xpath('//*[contains(@text, "오늘은")]', search_sec=20) # 오늘은 그만보기 클릭
@@ -357,6 +406,13 @@ class Login(testModule):
                     self.interact_by_id('timeline_live_child_small_bg', search_sec=10) # 첫번째상품 클릭
                 except:
                     self.interact_by_id('timeline_live_child_large_preview', search_sec=10) # 첫번째상품 클릭
+                try:
+                    self.interact_by_xpath('//*[contains(@text,"품절")]', search_sec=8, click=False) # 품절된 상품일 경우 pass
+                    print("8 Passed")
+                    TCFG.is_passed = True
+                    break
+                except:
+                    pass
                 self.interact_by_id('product_detail_buy_button', search_sec=20) # 구매하기 클릭
                 try:
                     self.interact_by_xpath('//*[contains(@text, "오늘")]', search_sec=20) # 오늘 그만 보기 클릭
@@ -377,7 +433,7 @@ class Login(testModule):
                 self.interact_by_xpath('//android.view.View[@content-desc="카테고리"]/android.widget.TextView', search_sec=20, wait_sec=10) # 카테고리 버튼 클릭
                 TCFG.driver.swipe(217, 1660, 217, 200, 10)
                 sleep(3)
-                self.interact_by_xpath('//android.view.View[@content-desc="로그아웃"]', search_sec=20, wait_sec=5) # 로그아웃 버튼 클릭
+                self.interact_by_xpath('//android.view.View[@content-desc="로그아웃"]', search_sec=200, wait_sec=5) # 로그아웃 버튼 클릭
             except:
                 if loop_count == 0:
                     print("Error!")
@@ -403,6 +459,13 @@ class Login(testModule):
                     self.interact_by_id('timeline_live_child_small_bg', search_sec=10) # 첫번째상품 클릭
                 except:
                     self.interact_by_id('timeline_live_child_large_preview', search_sec=10) # 첫번째상품 클릭
+                try:
+                    self.interact_by_xpath('//*[contains(@text,"품절")]', search_sec=8, click=False) # 품절된 상품일 경우 pass
+                    print("9 Passed")
+                    TCFG.is_passed = True
+                    break
+                except:
+                    pass
                 self.interact_by_id('product_detail_buy_button', search_sec=20) # 구매하기 클릭
                 try:
                     self.interact_by_xpath('//*[contains(@text, "모바일웹에서 계속 보기")]', search_sec=10) # 오늘 그만 보기 클릭
@@ -420,7 +483,7 @@ class Login(testModule):
                 self.interact_by_xpath('//android.widget.Button[@text="확인"]', search_sec=20) # 확인 버튼 클릭
                 self.interact_by_xpath('//android.widget.Button[@text="로그인"]', search_sec=20) # 로그인 버튼 클릭
                 self.interact_by_xpath('//android.widget.Button[@text="취소"]', search_sec=20) # 취소 버튼 클릭
-                self.interact_by_xpath('//android.view.View[@content-desc="로그아웃"]', search_sec=20, wait_sec=5) # 로그아웃 버튼 클릭
+                self.interact_by_xpath('//android.view.View[@content-desc="로그아웃"]', search_sec=200, wait_sec=5) # 로그아웃 버튼 클릭
             except:
                 if loop_count == 0:
                     print("Error!")
@@ -448,6 +511,13 @@ class Login(testModule):
                     self.interact_by_id('timeline_live_child_small_bg', search_sec=10) # 첫번째상품 클릭
                 except:
                     self.interact_by_id('timeline_live_child_large_preview', search_sec=10) # 첫번째상품 클릭
+                try:
+                    self.interact_by_xpath('//*[contains(@text,"품절")]', search_sec=8, click=False) # 품절된 상품일 경우 pass
+                    print("10 Passed")
+                    TCFG.is_passed = True
+                    break
+                except:
+                    pass
                 self.interact_by_id('product_detail_buy_button', search_sec=20) # 구매하기 클릭
                 try:
                     self.interact_by_xpath('//*[contains(@text, "오늘")]', search_sec=5) # 오늘 그만 보기 클릭
@@ -511,6 +581,13 @@ class Login(testModule):
                     self.interact_by_id('timeline_live_child_small_bg', search_sec=10) # 첫번째상품 클릭
                 except:
                     self.interact_by_id('timeline_live_child_large_preview', search_sec=10) # 첫번째상품 클릭
+                try:
+                    self.interact_by_xpath('//*[contains(@text,"품절")]', search_sec=8, click=False) # 품절된 상품일 경우 pass
+                    print("11 Passed")
+                    TCFG.is_passed = True
+                    break
+                except:
+                    pass
                 # try:
                 #     self.interact_by_xpath('//android.widget.TextView[@text="방송 준비 중입니다."]', search_sec=5 , click=False) # 방송 준비 중일 경우 pass
                 # except:
@@ -572,6 +649,13 @@ class Login(testModule):
                     self.interact_by_id('timeline_live_child_small_bg', search_sec=10) # 첫번째상품 클릭
                 except:
                     self.interact_by_id('timeline_live_child_large_preview', search_sec=10) # 첫번째상품 클릭
+                try:
+                    self.interact_by_xpath('//*[contains(@text,"품절")]', search_sec=8, click=False) # 품절된 상품일 경우 pass
+                    print("12 Passed")
+                    TCFG.is_passed = True
+                    break
+                except:
+                    pass
                 self.interact_by_id('product_detail_buy_button', search_sec=20) # 구매하기 클릭
                 try:
                     self.interact_by_xpath('//*[contains(@text, "오늘")]', search_sec=5) # 오늘 그만 보기 클릭
@@ -582,14 +666,16 @@ class Login(testModule):
                 except:
                     self.interact_by_xpath('//*[contains(@content-desc, "장바구니")]', search_sec=20)  # 장바구니 클릭
                 self.interact_by_xpath('(//android.widget.EditText)[2]', search_sec=20, send_keys_msg="choppa2017!", click=False) # 비밀번호 입력
-                self.interact_by_xpath('//android.widget.Button[@text="로그인"]', search_sec=20) # 로그인 버튼 클릭
+                self.interact_by_xpath('//android.widget.Button[@text="로그인"]', search_sec=20, wait_sec=10) # 로그인 버튼 클릭
                 TCFG.driver.swipe(217, 1660, 217, 200, 10)
                 sleep(3)
                 TCFG.driver.swipe(217, 1660, 217, 200, 10)
                 sleep(3)
-                self.interact_by_xpath('//android.view.View[@content-desc="로그아웃"]/android.widget.TextView', search_sec=20) # 로그아웃 버튼 클릭
+                TCFG.driver.swipe(217, 1660, 217, 200, 10)
+                sleep(3)
+                self.interact_by_xpath('//android.view.View[@content-desc="로그아웃"]', search_sec=20) # 로그아웃 버튼 클릭
                 self.interact_by_xpath('//android.widget.Button[@text="확인"]', search_sec=20) # 확인 클릭
-                self.interact_by_xpath('//android.widget.Button[@text="확인"]', search_sec=20)  # 확인 클릭
+                self.interact_by_xpath('//android.widget.Button[@text="확인"]', search_sec=20) # 확인 클릭
             except:
                 if loop_count == 0:
                     print("Error!")
@@ -623,7 +709,18 @@ class Login(testModule):
                     self.interact_by_id('timeline_live_child_small_bg', search_sec=10) # 첫번째상품 클릭
                 except:
                     self.interact_by_id('timeline_live_child_large_preview', search_sec=10) # 첫번째상품 클릭
+                try:
+                    self.interact_by_xpath('//*[contains(@text,"품절")]', search_sec=8, click=False) # 품절된 상품일 경우 pass
+                    print("13 Passed")
+                    TCFG.is_passed = True
+                    break
+                except:
+                    pass
                 self.interact_by_id('product_detail_buy_button', search_sec=20, wait_sec=5) # 구매하기 클릭
+                try:
+                    self.interact_by_xpath('//android.view.View[@content-desc="오늘하루 그만보기"]/android.widget.TextView', search_sec=20) # 오늘하루 그만보기
+                except:
+                    pass
                 self.interact_by_xpath('//*[contains(@content-desc, "장바구니")]', search_sec=20, wait_sec=10) # 장바구니 클릭
                 self.interact_by_xpath('//android.widget.Button[@text="확인"]', search_sec=20) # 확인 클릭
                 self.interact_by_xpath('(//android.widget.EditText)[1]', search_sec=200, send_keys_msg="testbuzzni", click=False) # 아이디 입력
@@ -677,6 +774,13 @@ class Login(testModule):
                     self.interact_by_id('timeline_live_child_small_bg', search_sec=10) # 첫번째상품 클릭
                 except:
                     self.interact_by_id('timeline_live_child_large_preview', search_sec=10) # 첫번째상품 클릭
+                try:
+                    self.interact_by_xpath('//*[contains(@text,"품절")]', search_sec=8, click=False) # 품절된 상품일 경우 pass
+                    print("14 Passed")
+                    TCFG.is_passed = True
+                    break
+                except:
+                    pass
                 self.interact_by_id('product_detail_buy_button', search_sec=20, wait_sec=5) # 구매하기 클릭
                 self.interact_by_xpath('//android.widget.Button[@text="장바구니"]', search_sec=20) # 장바구니 클릭
                 self.interact_by_xpath('//android.widget.Button[@text="로그인"]', search_sec=20) # 로그인 클릭
@@ -722,6 +826,13 @@ class Login(testModule):
                     self.interact_by_id('timeline_live_child_small_bg', search_sec=10) # 첫번째상품 클릭
                 except:
                     self.interact_by_id('timeline_live_child_large_preview', search_sec=10) # 첫번째상품 클릭
+                try:
+                    self.interact_by_xpath('//*[contains(@text,"품절")]', search_sec=8, click=False) # 품절된 상품일 경우 pass
+                    print("15 Passed")
+                    TCFG.is_passed = True
+                    break
+                except:
+                    pass
                 self.interact_by_id('product_detail_buy_button', search_sec=20, wait_sec=5) # 구매하기 클릭
                 try:
                     self.interact_by_xpath('//*[contains(@text, "오늘 그만 보기")]', search_sec=5) # 오늘 그만 보기 클릭
