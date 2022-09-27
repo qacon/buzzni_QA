@@ -1,19 +1,8 @@
 # -*- coding: utf-8 -*-
 import sys
-import io
 import unittest
-import os
-import time, datetime
-import random
-import numpy as np
-from Autoscroll_And import *
-from appium import webdriver
 from time import sleep
 from appium.webdriver.common.touch_action import TouchAction
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import NoSuchElementException
 from TestModule import testModule
 from Bootstrap import initialize_bp
 from Bootstrap import TEST_CONFIG as TCFG
