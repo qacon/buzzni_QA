@@ -26,9 +26,9 @@ TEST_CONFIG = TestConfig()
 
 def initialize_bp(target, argv):
     TEST_CONFIG.port = "4723"
-    TEST_CONFIG.sdkver = "13.4.1"
+    TEST_CONFIG.sdkver = "14.8.1"
     TEST_CONFIG.dname = "iPhone 11"
-    TEST_CONFIG.udid = "00008030-0002712A36E0802E"
+    TEST_CONFIG.udid = "00008030-000A2D283492802E"
     TEST_CONFIG.auto = "XCUITest"
     # TEST_CONFIG.bundleId = "buzzni.homeshoppingmoa.webapp.dev"
     TEST_CONFIG.bundleId = "buzzni.homeshoppingmoa.webapp"
