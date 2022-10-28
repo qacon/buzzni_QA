@@ -4,6 +4,7 @@ from  __future__ import print_function
 from unittest import TestLoader, TestSuite
 from HtmlTestRunner import HTMLTestRunner
 from Login import *
+from Category import *
 from email.message import EmailMessage
 import datetime
 import os
@@ -18,8 +19,9 @@ import smtplib
 #     dname = json_string['dname']
 
 s1 = TestLoader().loadTestsFromTestCase(Login)
+s2 = TestLoader().loadTestsFromTestCase(Category)
 
-suite = TestSuite([s1])
+suite = TestSuite([s1, s2])
 
 daytime = datetime.datetime.now()
 dt = daytime.strftime("%Y-%m-%d_%H-%M-%S")

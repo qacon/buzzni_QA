@@ -49,5 +49,5 @@ def initialize_bp(target, argv):
             "appium:udid": TEST_CONFIG.udid,
             "newCommandTimeout": 10000,
             "appium:noReset": "true"
-        }
+    }
     )

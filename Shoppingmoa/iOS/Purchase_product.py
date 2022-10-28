@@ -56,64 +56,37 @@ class Purchase_product(testModule):
                 TouchAction(TCFG.driver).tap(None, 264, 624, 1).perform() # 7 클
                 sleep(1)
                 TouchAction(TCFG.driver).tap(None, 100, 622, 1).perform() # 3 클
-                sleep(2)
+                sleep(1)
                 TouchAction(TCFG.driver).tap(None, 371, 105, 1).perform()  # 검색 클릭
-                sleep(2)
+                sleep(1)
                 self.interact_by_xpath('//XCUIElementTypeStaticText[@name="쵸파_테스트 자동화 상품"]', search_sec=20) # 쵸파_테스트 자동화 상품 클릭
-                sleep(4)
                 self.interact_by_xpath('//*[contains(@name, "바로구매")]', search_sec=20) # 바로구매 클릭
-                sleep(4)
                 self.interact_by_xpath('(//*[contains(@name, "바로구매")])[2]', search_sec=20) # 바로구매 클릭
-                sleep(4)
                 self.interact_by_xpath('//*[contains(@name, "결제하기")]', search_sec=20) # 결제하기 클릭
-                sleep(4)
                 self.interact_by_xpath('//XCUIElementTypeButton[@name="앱 없이 결제"]', search_sec=20) # 앱 없이 결제 클릭
-                sleep(4)
                 self.interact_by_id('휴대폰번호', search_sec=20, send_keys_msg="010-7513-6165", click=False) # 핸드폰 번호 입력
-                sleep(4)
                 self.interact_by_id('주민등록번호 앞 7자리', search_sec=20, send_keys_msg="910131-1", click=False) # 주민번호 입력
-                sleep(4)
                 self.interact_by_xpath('//XCUIElementTypeStaticText[@name="개인정보 수집이용 동의"]', search_sec=20) # 개인정보 수집이용 동의 체크
-                sleep(4)
                 self.interact_by_xpath('//*[contains(@name, "확인")]', search_sec=20) # 확인클릭
-                sleep(4)
                 self.interact_by_id('로그인', search_sec=20) # 로그인 클릭
-                sleep(4)
                 self.interact_by_xpath('(//XCUIElementTypeButton[@name="결제하기"])[2]', search_sec=20) # 결제하기 클릭
-                sleep(4)
                 # 비밀번호 클릭(KB페이의 경우 번호 버튼이 잡힘)
                 self.interact_by_xpath('//XCUIElementTypeButton[@name="3"]', search_sec=20) # 3 클릭
-                sleep(4)
                 self.interact_by_xpath('//XCUIElementTypeButton[@name="1"]', search_sec=20) # 1 클릭
-                sleep(4)
                 self.interact_by_xpath('//XCUIElementTypeButton[@name="8"]', search_sec=20) # 8 클릭
-                sleep(4)
                 self.interact_by_xpath('//XCUIElementTypeButton[@name="2"]', search_sec=20) # 2 클릭
-                sleep(4)
                 self.interact_by_xpath('//XCUIElementTypeButton[@name="3"]', search_sec=20) # 3 클릭
-                sleep(4)
                 self.interact_by_xpath('//XCUIElementTypeButton[@name="1"]', search_sec=20) # 1 클릭
-                sleep(4)
                 self.interact_by_xpath('//*[contains(@name, "확인")]', search_sec=20) # 확인 버튼 클릭
-                sleep(4)
                 self.interact_by_xpath('//XCUIElementTypeButton[@name="주문 상세보기"]', search_sec=20) # 주문상세보기 버튼 클릭
-                sleep(2)
                 self.interact_by_xpath('//XCUIElementTypeButton[@name="주문취소"]', search_sec=20) # 주문 취소 버튼 클릭
-                sleep(2)
                 self.interact_by_xpath('//XCUIElementTypeButton[@name="다음"]', search_sec=20) # 다음 버튼 클릭
-                sleep(4)
                 self.interact_by_id('주문실수', search_sec=20) # 주문실수 버튼 클릭
-                sleep(4)
                 self.interact_by_xpath('//XCUIElementTypeCell[2]/XCUIElementTypeTextView', search_sec=20, send_keys_msg="주문취소 테스트입니다!!!", click=False) # 상세사유 입력
-                sleep(4)
                 self.interact_by_xpath('//XCUIElementTypeButton[@name="다음"]', search_sec=20) # 다음 클릭
-                sleep(4)
                 self.interact_by_xpath('//XCUIElementTypeButton[@name="취소요청"]', wait_sec=20, search_sec=10) # 취소요청 클릭
-                sleep(4)
                 self.interact_by_xpath('//XCUIElementTypeButton[@name="취소 상세보기"]', search_sec=20) # 취소 상세보기 클릭
-                sleep(4)
                 self.interact_by_xpath('//*[contains(@name, "취소완료")]', search_sec=20, click=False) # 취소완료 텍스트 노출 확인
-                sleep(4)
             except:
                 # if loop_count == (TCFG.check_loop_count-1):
                 if loop_count == 0:
