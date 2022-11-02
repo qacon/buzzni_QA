@@ -277,6 +277,10 @@ class Login(testModule):
                         self.interact_by_xpath('//*[contains(@content-desc,"30일")]', search_sec=10) # 30일 동안 보지 않기 클릭
                     except:
                         pass
+                    try:
+                        self.interact_by_xpath('//*[contains(@text, "7일간 안보기")]', search_sec=20) # 7일간 안보기 클릭
+                    except:
+                        pass
                 except:
                     self.interact_by_xpath('(//android.view.View[@content-desc="상담신청"])[1]', search_sec=20) # 상담신청 클릭
                     self.interact_by_xpath('//android.widget.Button[@text="확인"]', search_sec=20) # 확인 클릭
@@ -285,11 +289,11 @@ class Login(testModule):
                     self.interact_by_xpath('(//android.widget.EditText)[2]', search_sec=20) # 로그인 버튼 활성화
                     TouchAction(TCFG.driver).tap(None, 1318, 2775, 1).perform() # 로그인 (이동 클릭)
                     sleep(2)
-                    self.interact_by_xpath('//android.view.View[@content-desc="뒤로가기"]',search_sec=20) # 뒤로가기 클릭
-                try:
-                    self.interact_by_xpath('//*[contains(@text, "7일")]', search_sec=20) # 7일간 안보기 클릭
-                except:
-                    pass
+                    try:
+                        self.interact_by_xpath('//*[contains(@text, "7일간 안보기")]', search_sec=20) # 7일간 안보기 클릭
+                    except:
+                        pass
+                    self.interact_by_xpath('//android.view.View[@content-desc="뒤로가기"]', search_sec=20)  # 뒤로가기 클릭
                 self.interact_by_xpath('//android.view.View[@content-desc="마이쇼핑"]/android.widget.TextView', search_sec=20) # 마이쇼핑 클릭
                 TCFG.driver.swipe(217, 1660, 217, 200, 10)
                 sleep(3)
@@ -736,6 +740,10 @@ class Login(testModule):
                         self.interact_by_xpath('//*[contains(@content-desc,"30일")]', search_sec=10) # 30일 동안 보지 않기 클릭
                     except:
                         pass
+                    try:
+                        self.interact_by_xpath('//*[contains(@text, "7일간 안보기")]', search_sec=20) # 7일간 안보기 클릭
+                    except:
+                        pass
                 except:
                     self.interact_by_xpath('(//android.view.View[@content-desc="상담신청"])[1]', search_sec=20) # 상담신청 클릭
                     self.interact_by_xpath('//android.widget.Button[@text="확인"]', search_sec=20) # 확인 클릭
@@ -744,11 +752,11 @@ class Login(testModule):
                     self.interact_by_xpath('(//android.widget.EditText)[2]', search_sec=20) # 로그인 버튼 활성화
                     TouchAction(TCFG.driver).tap(None, 1318, 2775, 1).perform() # 로그인 (이동 클릭)
                     sleep(2)
+                    try:
+                        self.interact_by_xpath('//*[contains(@text, "7일간 안보기")]', search_sec=20) # 7일간 안보기 클릭
+                    except:
+                        pass
                     self.interact_by_xpath('//android.view.View[@content-desc="뒤로가기"]', search_sec=20) # 뒤로가기 클릭
-                try:
-                    self.interact_by_xpath('//*[contains(@text, "7일")]', search_sec=20) # 7일간 안보기 클릭
-                except:
-                    pass
                 self.interact_by_xpath('//android.view.View[@content-desc="마이쇼핑"]/android.widget.TextView', search_sec=20) # 마이쇼핑 클릭
                 TCFG.driver.swipe(217, 1660, 217, 200, 10)
                 sleep(3)
