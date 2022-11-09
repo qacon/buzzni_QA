@@ -41,7 +41,7 @@ class Category(testModule):
         except:
             pass
 
-    def test_01_Outlet(self):
+    def test_01_W_ShoppingWeek(self):
         for loop_count in range(0, TCFG.check_loop_count):
             try:
                 try:
@@ -52,9 +52,8 @@ class Category(testModule):
                     self.interact_by_id('timeline_floating_banner_close_btn', search_sec=20) # 플로팅 배너 닫기 클릭
                 except:
                     pass
-                self.interact_by_xpath('//android.widget.TextView[@text="아울렛"]', search_sec=20, wait_sec=10) # 아울렛 클릭
-                self.interact_by_xpath('//android.widget.Button[@text="베스트"]', search_sec=20, click=False) # 베스트 버튼 노출 확인
-                self.interact_by_xpath('//android.view.ViewGroup/android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.view.View/android.widget.ListView/android.view.View[1]', search_sec=10, click=False) # 상품영역(상품의 이미지 및 정보) 노출 확인
+                self.interact_by_xpath('//android.widget.TextView[@text="W쇼핑위크"]', search_sec=30) # W쇼핑위크 클릭
+                self.interact_by_id('com.buzzni.android.subapp.shoppingmoa:id/action_bar_root', search_sec=20, click=False) # 광고 영역 노출 확인
             except:
                 if loop_count == (TCFG.check_loop_count-1):
                     print("Error!")
@@ -66,27 +65,10 @@ class Category(testModule):
                 TCFG.is_passed = True
                 break
 
-    def test_02_Hyundai_7_day(self):
-        for loop_count in range(0, TCFG.check_loop_count):
-            try:
-                self.interact_by_xpath('//android.widget.TextView[@text="현대7데이"]', search_sec=30, wait_sec=10) # 현대7데이 클릭
-                self.interact_by_xpath('//android.widget.Button[@text="전체"]', search_sec=20, click=False) # 전체 버튼 노출 확인
-                self.interact_by_xpath('//android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.widget.ListView/android.view.View[1]/android.view.View', search_sec=10, click=False) # 상품영역(상품의 이미지 및 정보) 노출 확인
-            except:
-                if loop_count == (TCFG.check_loop_count-1):
-                    print("Error!")
-                    self.assertEqual(0, 1)
-                    break
-                self.exception('home')
-            else:
-                print("2 Passed")
-                TCFG.is_passed = True
-                break
-
     def test_02_Best(self):
         for loop_count in range(0, TCFG.check_loop_count):
             try:
-                self.interact_by_xpath('//android.widget.TextView[@text="베스트"]', search_sec=30, wait_sec=10) # 베스트 클릭
+                self.interact_by_xpath('//android.widget.TextView[@text="베스트"]', search_sec=30) # 베스트 클릭
                 self.interact_by_xpath('//android.widget.Button[@text="전체"]', search_sec=20, click=False) # 전체 버튼 노출 확인
                 self.interact_by_xpath('//android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.widget.ListView/android.view.View[1]/android.view.View', search_sec=10, click=False) # 상품영역(상품의 이미지 및 정보) 노출 확인
             except:
@@ -100,31 +82,12 @@ class Category(testModule):
                 TCFG.is_passed = True
                 break
 
-    def test_02_Best(self):
+    def test_03_Outlet(self):
         for loop_count in range(0, TCFG.check_loop_count):
             try:
-                self.interact_by_xpath('//android.widget.TextView[@text="베스트"]', search_sec=30, wait_sec=10) # 베스트 클릭
-                self.interact_by_xpath('//android.widget.Button[@text="전체"]', search_sec=20, click=False) # 전체 버튼 노출 확인
-                self.interact_by_xpath('//android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.widget.ListView/android.view.View[1]/android.view.View', search_sec=10, click=False) # 상품영역(상품의 이미지 및 정보) 노출 확인
-            except:
-                if loop_count == (TCFG.check_loop_count-1):
-                    print("Error!")
-                    self.assertEqual(0, 1)
-                    break
-                self.exception('home')
-            else:
-                print("2 Passed")
-                TCFG.is_passed = True
-                break
-
-    def test_03_ShoppingLive(self):
-        for loop_count in range(0, TCFG.check_loop_count):
-            try:
-                TCFG.driver.swipe(1173, 355, 64, 355, 10) # 우측으로 스와이프
-                sleep(2)
-                self.interact_by_xpath('//android.widget.TextView[@text="쇼핑라이브"]', search_sec=30, wait_sec=10) # 쇼핑라이브 클릭
-                self.interact_by_xpath('//android.widget.TextView[@text="지금 인기있는 방송들이에요!"]', search_sec=20, click=False) # 지금 인기있는 방송들이에요! 텍스트 노출 확인
-                self.interact_by_xpath('//android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.view.View/android.view.View', search_sec=10, click=False) # 방송영역 전체 노출 확인
+                self.interact_by_xpath('//android.widget.TextView[@text="아울렛"]', search_sec=20) # 아울렛 클릭
+                self.interact_by_xpath('//android.widget.Button[@text="베스트"]', search_sec=20, click=False) # 베스트 버튼 노출 확인
+                self.interact_by_xpath('//android.view.ViewGroup/android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.view.View/android.widget.ListView/android.view.View[1]', search_sec=10, click=False) # 상품영역(상품의 이미지 및 정보) 노출 확인
             except:
                 if loop_count == (TCFG.check_loop_count-1):
                     print("Error!")
@@ -136,15 +99,12 @@ class Category(testModule):
                 TCFG.is_passed = True
                 break
 
-    def test_04_Category(self):
+    def test_04_New(self):
         for loop_count in range(0, TCFG.check_loop_count):
             try:
-                self.interact_by_id('logo_btn', search_sec=30) # 홈쇼핑모아 로고 클릭
-                self.interact_by_id('main_timeline_short_cut_item_image', search_sec=20, wait_sec=10) # 첫번째 카테고리 클릭
-                self.interact_by_id('default_header_title', search_sec=20, click=False) # 페이지 타이틀 노출 확인
-                self.interact_by_xpath('//android.view.View[@text="추천순"]', search_sec=20, click=False) # 추천순 버튼 노출 확인
-                self.interact_by_xpath('//android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View[3]/android.widget.ListView/android.view.View[1]/android.view.View/android.view.View', search_sec=20, click=False) # 상품영역(상품의 이미지 및 정보) 노출 확인
-                self.interact_by_id('default_header_back_button', search_sec=20) # 뒤로가기 버튼 클릭
+                self.interact_by_xpath('//android.widget.TextView[@text="신상품"]', search_sec=30) # 신상품 클릭
+                self.interact_by_xpath('//android.widget.Button[@text="전체"]', search_sec=20, click=False) # 전체 버튼 노출 확인
+                self.interact_by_xpath('//android.view.ViewGroup/android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[4]/android.widget.ListView/android.view.View[1]/android.view.View', search_sec=10, click=False) # 상품영역(상품의 이미지 및 정보) 노출 확인
             except:
                 if loop_count == (TCFG.check_loop_count-1):
                     print("Error!")
@@ -156,10 +116,65 @@ class Category(testModule):
                 TCFG.is_passed = True
                 break
 
-    def test_05_Search(self):
+    def test_05_Nov_Sale(self):
+        for loop_count in range(0, TCFG.check_loop_count):
+            try:
+                self.interact_by_xpath('//android.widget.TextView[@text="11월의 할인"]', search_sec=30) # 11월의 할인 클릭
+                self.interact_by_id('com.buzzni.android.subapp.shoppingmoa:id/top_tob_item_swipe_refresh', search_sec=10, click=False) # 11월의 할인 이미지 영역 노출 확인
+                self.interact_by_xpath('//android.view.View[@resource-id="KakaoShare"]', search_sec=20, click=False) # 카카오톡 공유 버튼 노출 확인
+            except:
+                if loop_count == (TCFG.check_loop_count-1):
+                    print("Error!")
+                    self.assertEqual(0, 1)
+                    break
+                self.exception('home')
+            else:
+                print("5 Passed")
+                TCFG.is_passed = True
+                break
+
+    def test_06_ShoppingLive(self):
+        for loop_count in range(0, TCFG.check_loop_count):
+            try:
+                self.interact_by_xpath('//android.widget.TextView[@text="11월의 할인"]', search_sec=30) # 11월의 할인 클릭
+                self.interact_by_xpath('//android.widget.TextView[@text="쇼핑라이브"]', search_sec=30) # 쇼핑라이브 클릭
+                self.interact_by_xpath('//android.widget.TextView[@text="지금 인기있는 방송들이에요!"]', search_sec=20, click=False) # 지금 인기있는 방송들이에요! 텍스트 노출 확인
+                self.interact_by_xpath('//android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.view.View/android.view.View', search_sec=10, click=False) # 방송영역 전체 노출 확인
+            except:
+                if loop_count == (TCFG.check_loop_count-1):
+                    print("Error!")
+                    self.assertEqual(0, 1)
+                    break
+                self.exception('home')
+            else:
+                print("6 Passed")
+                TCFG.is_passed = True
+                break
+
+    def test_07_Category(self):
         for loop_count in range(0, TCFG.check_loop_count):
             try:
                 self.interact_by_id('logo_btn', search_sec=30) # 홈쇼핑모아 로고 클릭
+                self.interact_by_id('main_timeline_short_cut_item_image', search_sec=20) # 첫번째 카테고리 클릭
+                self.interact_by_id('default_header_title', search_sec=20, click=False) # 페이지 타이틀 노출 확인
+                self.interact_by_xpath('//android.view.View[@text="추천순"]', search_sec=20, click=False) # 추천순 버튼 노출 확인
+                self.interact_by_xpath('//android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View[3]/android.widget.ListView/android.view.View[1]/android.view.View/android.view.View', search_sec=20, click=False) # 상품영역(상품의 이미지 및 정보) 노출 확인
+                self.interact_by_id('default_header_back_button', search_sec=20) # 뒤로가기 버튼 클릭
+            except:
+                if loop_count == (TCFG.check_loop_count-1):
+                    print("Error!")
+                    self.assertEqual(0, 1)
+                    break
+                self.exception('home')
+            else:
+                print("7 Passed")
+                TCFG.is_passed = True
+                break
+
+    def test_08_Search(self):
+        for loop_count in range(0, TCFG.check_loop_count):
+            try:
+                self.interact_by_id('logo_btn', search_sec=30) # 홈쇼핑모아 로고 클릭+
                 self.interact_by_xpath('//android.widget.TextView[@text="검색"]', search_sec=20, wait_sec=10) # 검색 클릭
                 self.interact_by_id('search_edittext', search_sec=20, send_keys_msg="마스크", click=False) # 마스크 입력
                 self.interact_by_id('search_btn', search_sec=20) # 검색
@@ -173,7 +188,7 @@ class Category(testModule):
                     self.assertEqual(0, 1)
                     break
             else:
-                print("5 Passed")
+                print("8 Passed")
                 TCFG.is_finished = True
                 TCFG.is_passed = True
                 break
