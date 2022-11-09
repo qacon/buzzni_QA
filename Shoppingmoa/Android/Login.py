@@ -136,6 +136,10 @@ class Login(testModule):
                         except:
                             pass
                 self.interact_by_id('product_detail_buy_button', search_sec=20, wait_sec=10) # 구매하기 클릭
+                try:
+                    self.interact_by_xpath('//*[contains(@text,"모바일웹")]', search_sec=8) # 모바일웹에서 보기 클릭
+                except:
+                    pass
                 TouchAction(TCFG.driver).tap(None, 660, 203, 1).perform() # 장바구니 클릭 클릭
                 sleep(3)
                 self.interact_by_xpath('//android.widget.CheckBox[@text="자동 로그인"]', search_sec=20) # 자동 로그인 해제
@@ -149,9 +153,9 @@ class Login(testModule):
                     pass
                 self.interact_by_xpath('//android.view.View[@content-desc="뒤로 가기"]', search_sec=20, wait_sec=10) # 뒤로가기 클릭
                 try:
-                    self.interact_by_xpath('//android.view.View[@content-desc="CJ ONSTYLE"]', search_sec=20) # 홈 버튼 클릭
+                    self.interact_by_xpath('//android.view.View[@content-desc="CJ ONSTYLE"]', search_sec=15) # 홈 버튼 클릭
                 except:
-                    TouchAction(TCFG.driver).tap(None, 195, 317, 1).perform() # 브랜드 클릭
+                    TouchAction(TCFG.driver).tap(None, 146, 205, 1).perform() # 브랜드 클릭
                     sleep(2)
                 try:
                     self.interact_by_xpath('//*[contains(@text, "오늘")]', search_sec=10, wait_sec=10) # 오늘 그만 보기 클릭
@@ -629,7 +633,11 @@ class Login(testModule):
                             break
                         except:
                             pass
-                self.interact_by_id('product_detail_buy_button', search_sec=20, wait_sec=20) # 구매하기 클릭
+                self.interact_by_id('product_detail_buy_button', search_sec=20, wait_sec=10) # 구매하기 클릭
+                try:
+                    self.interact_by_xpath('//*[contains(@text,"모바일웹")]', search_sec=8) # 모바일웹에서 보기 클릭
+                except:
+                    pass
                 TouchAction(TCFG.driver).tap(None, 660, 203, 1).perform() # 장바구니 클릭 클릭
                 sleep(3)
                 self.interact_by_xpath('//android.widget.CheckBox[@text="자동 로그인"]', search_sec=20) # 자동 로그인 해제
@@ -643,9 +651,9 @@ class Login(testModule):
                     pass
                 self.interact_by_xpath('//android.view.View[@content-desc="뒤로 가기"]', search_sec=20, wait_sec=10) # 뒤로가기 클릭
                 try:
-                    self.interact_by_xpath('//android.view.View[@content-desc="CJ ONSTYLE"]', search_sec=20) # 홈 버튼 클릭
+                    self.interact_by_xpath('//android.view.View[@content-desc="CJ ONSTYLE"]', search_sec=15) # 홈 버튼 클릭
                 except:
-                    TouchAction(TCFG.driver).tap(None, 195, 317, 1).perform() # 브랜드 클릭
+                    TouchAction(TCFG.driver).tap(None, 146, 205, 1).perform() # 브랜드 클릭
                     sleep(2)
                 try:
                     self.interact_by_xpath('//*[contains(@text, "오늘")]', search_sec=10, wait_sec=10) # 오늘 그만 보기 클릭
