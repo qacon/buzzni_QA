@@ -37,10 +37,11 @@ def initialize_bp(target, argv):
     TEST_CONFIG.os = "Android"
     TEST_CONFIG.user_name = "billy"
     TEST_CONFIG.password = "billy"
-    app = '/Users/buzzniqa/Git/Shoppingmoa/APKs/shoppingmoa.apk'
+    app = '/Users/billy/Git/Shoppingmoa/APKs/shoppingmoa.apk'
 
     TEST_CONFIG.driver = webdriver.Remote(
-        command_executor=f'http://127.0.0.1:{TEST_CONFIG.port}/wd/hub',
+        command_executor=f'http://127.0.0.1:{TEST_CONFIG.port}',
+        # command_executor=f'http://127.0.0.1:{TEST_CONFIG.port}/wd/hub',
         desired_capabilities={
             'app': app,
             "platformName": "Android",

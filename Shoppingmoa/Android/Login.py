@@ -27,17 +27,18 @@ class Login(testModule):
         TCFG.is_passed = False
 
     def exception(self, menu):
-        sleep(2)
-        TCFG.driver.terminate_app('com.buzzni.android.subapp.shoppingmoa')
+        sleep(1)
+        TCFG.driver.close_app()
+        # TCFG.driver.terminate_app('com.buzzni.android.subapp.shoppingmoa')
         sleep(1)
         TCFG.driver.launch_app()
         sleep(1)
         try:
-            self.interact_by_id('mid_popup_activity_stop_today_btn', search_sec=5) # 오늘은 그만보기 클릭
+            self.interact_by_id('mid_popup_activity_stop_today_btn', search_sec=10) # 오늘은 그만보기 클릭
         except:
             pass
         try:
-            self.interact_by_id('timeline_floating_banner_close_btn', search_sec=5) # 플로팅 배너 닫기 클릭
+            self.interact_by_id('timeline_floating_banner_close_btn', search_sec=3) # 플로팅 배너 닫기 클릭
         except:
             pass
 
@@ -184,7 +185,7 @@ class Login(testModule):
         for loop_count in range(0, TCFG.check_loop_count):
             try:
                 self.exception('home')
-                self.interact_by_id('filter_btn', search_sec=20) # 필터 버튼 클릭
+                self.interact_by_id('filter_btn', search_sec=10) # 필터 버튼 클릭
                 self.interact_by_xpath('//android.widget.TextView[@text="롯데홈쇼핑"]', search_sec=20) # 롯데홈쇼핑 클릭
                 self.interact_by_id('timeline_filter_apply_button', search_sec=20) # 적용하기 클릭
                 try:
@@ -212,10 +213,13 @@ class Login(testModule):
                             pass
                 self.interact_by_id('product_detail_buy_button', search_sec=20, wait_sec=10) # 구매하기 클릭
                 try:
-                    self.interact_by_xpath('//*[contains(@text,"오늘")]', search_sec=5, wait_sec=60) # 오늘은 그만보기 클릭
+                    self.interact_by_xpath('//android.widget.Image[@text="icn-close-01-1"]', search_sec=60, wait_sec=10) # 혜택 닫기 버튼 클릭
                 except:
                     pass
-                sleep(2)
+                try:
+                    self.interact_by_xpath('//*[contains(@text,"오늘")]', search_sec=60, wait_sec=10) # 오늘은 그만보기 클릭
+                except:
+                    pass
                 self.interact_by_xpath('//*[contains(@content-desc,"담겨있음")]', search_sec=5, wait_sec=60) # 장바구니 클릭
                 # TouchAction(TCFG.driver).tap(None, 1334, 423, 1).perform() # 장바구니 클릭
                 # sleep(2)
@@ -250,7 +254,7 @@ class Login(testModule):
                 self.interact_by_xpath('//android.view.View[@content-desc="로그아웃 로그아웃"]/android.widget.TextView', search_sec=20) # 로그아웃 클릭
                 sleep(10)
             except:
-                if loop_count == TCFG.check_loop_count - 1:
+                if loop_count == 0:
                     print("Error!")
                     self.assertEqual(0, 3)
                     break
@@ -428,26 +432,26 @@ class Login(testModule):
                             break
                         except:
                             pass
-                self.interact_by_id('product_detail_buy_button', search_sec=20) # 구매하기 클릭
+                self.interact_by_id('product_detail_buy_button', search_sec=20, wait_sec=10) # 구매하기 클릭
                 try:
-                    self.interact_by_xpath('//*[contains(@text, "오늘")]', search_sec=20) # 오늘은 그만보기 클릭
+                    self.interact_by_xpath('//*[contains(@text, "오늘")]', search_sec=20, wait_sec=10) # 오늘은 그만보기 클릭
                 except:
                     pass
-                self.interact_by_xpath('(//android.widget.Button)[4]', search_sec=20) # 장바구니 클릭
+                TouchAction(TCFG.driver).tap(None, 671, 207, 1).perform() # 장바구니 클릭
+                sleep(2)
+                # self.interact_by_xpath('(//android.widget.Button)[4]', search_sec=20) # 장바구니 클릭
                 self.interact_by_xpath('//android.widget.Button[@text="로그인"]', search_sec=20) # 로그인 클릭
                 self.interact_by_xpath('(//android.widget.EditText)[1]', search_sec=20, send_keys_msg="testbuzzni@gmail.com", click=False) # 아이디 입력
                 self.interact_by_xpath('(//android.widget.EditText)[2]', search_sec=20, send_keys_msg="choppa2017!", click=False) # 비밀번호 입력
                 self.interact_by_xpath('//android.widget.Button[@text="로그인"]', search_sec=20) # 로그인 버튼 클릭
-                self.interact_by_xpath('//android.widget.Button[@text="뒤로가기"]', search_sec=20) # 뒤로가기 버튼 클릭
                 try:
-                    self.interact_by_xpath('//android.widget.Button[@text="뒤로가기"]', search_sec=20) # 뒤로가기 버튼 클릭
+                    self.interact_by_xpath('//android.widget.Button[@text="30일 후에 변경하기"]', search_sec=20) # 30일 후 변경하기 버튼 클릭
                 except:
                     pass
-                self.interact_by_xpath('(//*[contains(@text, "홈")])[2]', search_sec=20) # 홈 버튼 클릭
+                self.interact_by_xpath('//android.widget.Button[@text="쇼핑 계속하기"]', search_sec=20) # 쇼핑 계속하기 버튼 클릭
                 self.interact_by_xpath('//android.widget.Button[@text="사이드메뉴"]', search_sec=200, wait_sec=30) # 사이드메뉴 클릭
-                self.interact_by_xpath('//android.view.View/android.view.View[4]/android.view.View[2]/android.view.View[2]/android.widget.Button', search_sec=200) # 설정 버튼 클릭
-                # TouchAction(TCFG.driver).tap(None, 1061, 472, 1).perform() # 설정 버튼 클릭
-                # sleep(2)
+                TouchAction(TCFG.driver).tap(None, 531, 229, 1).perform() # 설정 버튼 클릭
+                sleep(2)
                 self.interact_by_xpath('//*[contains(@text, "로그아웃")]', search_sec=20, wait_sec=5) # 로그아웃 버튼 클릭
                 self.interact_by_xpath('//android.widget.Button[@text="네"]', search_sec=20, wait_sec=5) # 네 버튼 클릭
             except:
@@ -633,7 +637,7 @@ class Login(testModule):
                             break
                         except:
                             pass
-                self.interact_by_id('product_detail_buy_button', search_sec=20, wait_sec=10) # 구매하기 클릭
+                self.interact_by_id('product_detail_buy_button', search_sec=20, wait_sec=30) # 구매하기 클릭
                 try:
                     self.interact_by_xpath('//*[contains(@text,"모바일웹")]', search_sec=8) # 모바일웹에서 보기 클릭
                 except:
@@ -685,11 +689,11 @@ class Login(testModule):
                 self.interact_by_id('filter_btn', search_sec=20) # 필터 버튼 클릭
                 TCFG.driver.swipe(78, 1079, 78, 822) # 다른 제휴사 보이도록 스와이프
                 sleep(3)
-                TCFG.driver.swipe(78, 1079, 78, 822) # 다른 제휴사 보이도록 스와이프
+                TCFG.driver.swipe(78, 1079, 78, 900) # 다른 제휴사 보이도록 스와이프
                 sleep(3)
-                TCFG.driver.swipe(78, 1079, 78, 822) # 다른 제휴사 보이도록 스와이프
+                TCFG.driver.swipe(78, 1079, 78, 900) # 다른 제휴사 보이도록 스와이프
                 sleep(3)
-                self.interact_by_xpath('//*[contains(@text, "롯데OneTV")]', search_sec=20) # 롯데OneTV 플러스 클릭
+                self.interact_by_xpath('//*[contains(@text, "롯데")]', search_sec=20) # 롯데OneTV 플러스 클릭
                 self.interact_by_id('timeline_filter_apply_button', search_sec=20) # 적용하기 클릭
                 try:
                     self.interact_by_xpath('//android.widget.TextView[@text="방송 준비중입니다."]', search_sec=10, click=False) # 방송 준비중일 경우 pass
@@ -716,10 +720,13 @@ class Login(testModule):
                             pass
                 self.interact_by_id('product_detail_buy_button', search_sec=20, wait_sec=10) # 구매하기 클릭
                 try:
-                    self.interact_by_xpath('//*[contains(@text,"오늘")]', search_sec=5, wait_sec=60) # 오늘은 그만보기 클릭
+                    self.interact_by_xpath('//android.widget.Image[@text="icn-close-01-1"]', search_sec=60, wait_sec=10) # 혜택 닫기 버튼 클릭
                 except:
                     pass
-                sleep(2)
+                try:
+                    self.interact_by_xpath('//*[contains(@text,"오늘")]', search_sec=60, wait_sec=10)  # 오늘은 그만보기 클릭
+                except:
+                    pass
                 self.interact_by_xpath('//*[contains(@content-desc,"담겨있음")]', search_sec=5, wait_sec=60) # 장바구니 클릭
                 # TouchAction(TCFG.driver).tap(None, 1334, 423, 1).perform() # 장바구니 클릭
                 # sleep(2)
@@ -750,7 +757,7 @@ class Login(testModule):
                 self.interact_by_xpath('//android.view.View[@content-desc="로그아웃 로그아웃"]/android.widget.TextView', search_sec=20) # 로그아웃 클릭
                 sleep(10)
             except:
-                if loop_count == TCFG.check_loop_count - 1:
+                if loop_count == 0:
                     print("Error!")
                     self.assertEqual(0, 10)
                     break
@@ -1017,7 +1024,7 @@ class Login(testModule):
                 sleep(3)
                 TCFG.driver.swipe(78, 1079, 78, 822) # 다른 제휴사 보이도록 스와이프
                 sleep(3)
-                self.interact_by_xpath('//*[contains(@text, "NS")]', search_sec=20) # NS홈쇼핑 샵플러스 클릭
+                self.interact_by_xpath('//*[contains(@text, "NS")]', search_sec=60) # NS홈쇼핑 샵플러스 클릭
                 self.interact_by_id('timeline_filter_apply_button', search_sec=20) # 적용하기 클릭
                 try:
                     self.interact_by_xpath('//android.widget.TextView[@text="방송 준비중입니다."]', search_sec=10, click=False) # 방송 준비중일 경우 pass
@@ -1042,25 +1049,26 @@ class Login(testModule):
                             break
                         except:
                             pass
-                self.interact_by_id('product_detail_buy_button', search_sec=20) # 구매하기 클릭
+                self.interact_by_id('product_detail_buy_button', search_sec=20, wait_sec=10) # 구매하기 클릭
                 try:
-                    self.interact_by_xpath('//*[contains(@text, "오늘")]', search_sec=20) # 오늘은 그만보기 클릭
+                    self.interact_by_xpath('//*[contains(@text, "오늘")]', search_sec=20, wait_sec=10) # 오늘은 그만보기 클릭
                 except:
                     pass
-                self.interact_by_xpath('(//android.widget.Button)[4]', search_sec=20) # 장바구니 클릭
+                TouchAction(TCFG.driver).tap(None, 671, 207, 1).perform() # 장바구니 클릭
+                sleep(2)
+                # self.interact_by_xpath('(//android.widget.Button)[4]', search_sec=20) # 장바구니 클릭
                 self.interact_by_xpath('//android.widget.Button[@text="로그인"]', search_sec=20) # 로그인 클릭
                 self.interact_by_xpath('(//android.widget.EditText)[1]', search_sec=20, send_keys_msg="testbuzzni@gmail.com", click=False) # 아이디 입력
                 self.interact_by_xpath('(//android.widget.EditText)[2]', search_sec=20, send_keys_msg="choppa2017!", click=False) # 비밀번호 입력
                 self.interact_by_xpath('//android.widget.Button[@text="로그인"]', search_sec=20) # 로그인 버튼 클릭
-                self.interact_by_xpath('//android.widget.Button[@text="뒤로가기"]', search_sec=20) # 뒤로가기 버튼 클릭
                 try:
-                    self.interact_by_xpath('//android.widget.Button[@text="뒤로가기"]', search_sec=20) # 뒤로가기 버튼 클릭
+                    self.interact_by_xpath('//android.widget.Button[@text="30일 후에 변경하기"]', search_sec=20) # 30일 후 변경하기 버튼 클릭
                 except:
                     pass
-                self.interact_by_xpath('//android.widget.Button[@text="홈"]', search_sec=20) # 홈 버튼 클릭
+                self.interact_by_xpath('//android.widget.Button[@text="쇼핑 계속하기"]', search_sec=20) # 쇼핑 계속하기 버튼 클릭
                 self.interact_by_xpath('//android.widget.Button[@text="사이드메뉴"]', search_sec=200, wait_sec=10) # 사이드메뉴 클릭
-                self.interact_by_xpath('//android.view.View/android.view.View[4]/android.view.View[2]/android.view.View[2]/android.widget.Button', search_sec=200) # 설정 버튼 클릭
-                # TouchAction(TCFG.driver).tap(None, 1061, 472, 1).perform() # 설정 버튼 클릭
+                # self.interact_by_xpath('//android.view.View/android.view.View[4]/android.view.View[2]/android.view.View[2]/android.widget.Button', search_sec=200) # 설정 버튼 클릭
+                TouchAction(TCFG.driver).tap(None, 531, 229, 1).perform() # 설정 버튼 클릭
                 sleep(2)
                 self.interact_by_xpath('//*[contains(@text, "로그아웃")]', search_sec=20, wait_sec=5) # 로그아웃 버튼 클릭
                 self.interact_by_xpath('//android.widget.Button[@text="네"]', search_sec=20, wait_sec=5) # 네 버튼 클릭

@@ -40,7 +40,8 @@ def initialize_bp(target, argv):
     TEST_CONFIG.password = "billy"
 
     TEST_CONFIG.driver = webdriver.Remote(
-        command_executor=f'http://127.0.0.1:{TEST_CONFIG.port}/wd/hub',
+        command_executor=f'http://127.0.0.1:{TEST_CONFIG.port}',
+        # command_executor=f'http://127.0.0.1:{TEST_CONFIG.port}/wd/hub',
         desired_capabilities={
             "platformName": "iOS",
             "bundleId": TEST_CONFIG.bundleId,
