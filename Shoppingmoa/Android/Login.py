@@ -82,7 +82,7 @@ class Login(testModule):
                 self.interact_by_xpath('(//android.widget.EditText)[2]', search_sec=20, send_keys_msg="choppa2017!", click=False) # 비밀번호 입력
                 self.interact_by_xpath('//android.view.View[@content-desc="로그인"]', search_sec=20) # 로그인 클릭
                 try:
-                    self.interact_by_xpath('//*[contains(@content-desc,"30일")]', search_sec=10) # 30일 동안 보지 않기 클릭
+                    self.interact_by_xpath('//*[contains(@text,"30일")]', search_sec=10) # 30일 동안 보지 않기 클릭
                 except:
                     pass
                 self.interact_by_xpath('//android.widget.Button[@text="내비게이션"]', search_sec=20, wait_sec=5) # 슬라이드 메뉴 클릭

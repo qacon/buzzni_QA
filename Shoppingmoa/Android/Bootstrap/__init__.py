@@ -27,8 +27,9 @@ TEST_CONFIG = TestConfig()
 def initialize_bp(target, argv):
     TEST_CONFIG.port = "4723"
     TEST_CONFIG.sdkver = "10"
+    TEST_CONFIG.dname = "Galaxy Note 9"
     # TEST_CONFIG.dname = "Galaxy S10"
-    TEST_CONFIG.dname = "G7"
+    # TEST_CONFIG.dname = "G7"
     # TEST_CONFIG.udid = "R39M3084V5A"
     # TEST_CONFIG.udid = "LMG710Nb7188cc8"
     TEST_CONFIG.udid = "2469e164b41c7ece"
@@ -37,11 +38,11 @@ def initialize_bp(target, argv):
     TEST_CONFIG.os = "Android"
     TEST_CONFIG.user_name = "billy"
     TEST_CONFIG.password = "billy"
-    app = '/Users/billy/Git/Shoppingmoa/APKs/shoppingmoa.apk'
+    app = '/Users/macbookpro/Git/Shoppingmoa/APKs/shoppingmoa.apk'
 
     TEST_CONFIG.driver = webdriver.Remote(
-        command_executor=f'http://127.0.0.1:{TEST_CONFIG.port}',
-        # command_executor=f'http://127.0.0.1:{TEST_CONFIG.port}/wd/hub',
+        # command_executor=f'http://127.0.0.1:{TEST_CONFIG.port}',
+        command_executor=f'http://127.0.0.1:{TEST_CONFIG.port}/wd/hub',
         desired_capabilities={
             'app': app,
             "platformName": "Android",

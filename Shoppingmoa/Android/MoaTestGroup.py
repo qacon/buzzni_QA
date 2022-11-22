@@ -25,9 +25,9 @@ suite = TestSuite([s1, s2])
 
 daytime = datetime.datetime.now()
 dt = daytime.strftime("%Y-%m-%d_%H-%M-%S")
-filename = (f"G7MoaAutomationFunctionalTestReport")
+filename = (f"GalaxyNote9MoaAutomationFunctionalTestReport")
 dir = os.getcwd()
-finalfile = (dir + f"/reports/G7MoaAutomationTestReport_"+dt+".html")
+finalfile = (dir + f"/reports/GalaxyNote9MoaAutomationTestReport_"+dt+".html")
 runner = HTMLTestRunner(combine_reports=True, report_name=filename, report_title="Moa Automation Functional Test Report (Android)") # report_title 파일열면 가장위에 있는 메인 title
 runner.run(suite)
 
