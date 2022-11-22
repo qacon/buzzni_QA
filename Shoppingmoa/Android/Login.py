@@ -156,8 +156,7 @@ class Login(testModule):
                 try:
                     self.interact_by_xpath('//android.view.View[@content-desc="CJ ONSTYLE"]', search_sec=15) # 홈 버튼 클릭
                 except:
-                    TouchAction(TCFG.driver).tap(None, 146, 205, 1).perform() # 브랜드 클릭
-                    sleep(2)
+                    self.interact_by_xpath('//*[contains(@content-desc, "홈으로")]', search_sec=10, wait_sec=10) # 홈으로 가기 클릭
                 try:
                     self.interact_by_xpath('//*[contains(@text, "오늘")]', search_sec=10, wait_sec=10) # 오늘 그만 보기 클릭
                 except:
@@ -217,6 +216,10 @@ class Login(testModule):
                 except:
                     pass
                 try:
+                    self.interact_by_xpath('//android.widget.Image[@text="icn-close-02-3"]', search_sec=5, wait_sec=10) # 팝업 닫기 버튼 클릭
+                except:
+                    pass
+                try:
                     self.interact_by_xpath('//*[contains(@text,"오늘")]', search_sec=60, wait_sec=10) # 오늘은 그만보기 클릭
                 except:
                     pass
@@ -244,15 +247,14 @@ class Login(testModule):
                     self.interact_by_xpath('//android.widget.Image[@text="icn-close-01-1"]', search_sec=10) # 팝업 닫기 클릭
                 except:
                     pass
-                self.interact_by_xpath('//android.view.View[@content-desc="마이롯데"]', search_sec=20) # 마이롯데 클릭
+                self.interact_by_xpath('//android.view.View[@content-desc="마이롯데"]', search_sec=20, wait_sec=30) # 마이롯데 클릭
                 TCFG.driver.swipe(217, 1200, 217, 100)
                 sleep(3)
                 TCFG.driver.swipe(217, 1200, 217, 100)
                 sleep(3)
                 TCFG.driver.swipe(217, 1200, 217, 100)
                 sleep(3)
-                self.interact_by_xpath('//android.view.View[@content-desc="로그아웃 로그아웃"]/android.widget.TextView', search_sec=20) # 로그아웃 클릭
-                sleep(10)
+                self.interact_by_xpath('//android.view.View[@content-desc="로그아웃 로그아웃"]/android.widget.TextView', search_sec=20, wait_sec=4) # 로그아웃 클릭
             except:
                 if loop_count == 0:
                     print("Error!")
@@ -657,8 +659,7 @@ class Login(testModule):
                 try:
                     self.interact_by_xpath('//android.view.View[@content-desc="CJ ONSTYLE"]', search_sec=15) # 홈 버튼 클릭
                 except:
-                    TouchAction(TCFG.driver).tap(None, 146, 205, 1).perform() # 브랜드 클릭
-                    sleep(2)
+                    self.interact_by_xpath('//*[contains(@content-desc, "홈으로")]', search_sec=10, wait_sec=10) # 홈으로 가기 클릭
                 try:
                     self.interact_by_xpath('//*[contains(@text, "오늘")]', search_sec=10, wait_sec=10) # 오늘 그만 보기 클릭
                 except:
@@ -724,7 +725,11 @@ class Login(testModule):
                 except:
                     pass
                 try:
-                    self.interact_by_xpath('//*[contains(@text,"오늘")]', search_sec=60, wait_sec=10)  # 오늘은 그만보기 클릭
+                    self.interact_by_xpath('//android.widget.Image[@text="icn-close-02-3"]', search_sec=5, wait_sec=10) # 팝업 닫기 버튼 클릭
+                except:
+                    pass
+                try:
+                    self.interact_by_xpath('//*[contains(@text,"오늘")]', search_sec=60, wait_sec=10) # 오늘은 그만보기 클릭
                 except:
                     pass
                 self.interact_by_xpath('//*[contains(@content-desc,"담겨있음")]', search_sec=5, wait_sec=60) # 장바구니 클릭
@@ -747,15 +752,14 @@ class Login(testModule):
                     self.interact_by_xpath('//*[contains(@text,"오늘")]', search_sec=10) # 오늘 그만 보기 클릭
                 except:
                     pass
-                self.interact_by_xpath('//android.view.View[@content-desc="마이롯데"]', search_sec=20, wait_sec=10) # 마이롯데 클릭
+                self.interact_by_xpath('//android.view.View[@content-desc="마이롯데"]', search_sec=20, wait_sec=30) # 마이롯데 클릭
                 TCFG.driver.swipe(217, 1200, 217, 100)
                 sleep(3)
                 TCFG.driver.swipe(217, 1200, 217, 100)
                 sleep(3)
                 TCFG.driver.swipe(217, 1200, 217, 100)
                 sleep(3)
-                self.interact_by_xpath('//android.view.View[@content-desc="로그아웃 로그아웃"]/android.widget.TextView', search_sec=20) # 로그아웃 클릭
-                sleep(10)
+                self.interact_by_xpath('//android.view.View[@content-desc="로그아웃 로그아웃"]/android.widget.TextView', search_sec=20, wait_sec=30) # 로그아웃 클릭
             except:
                 if loop_count == 0:
                     print("Error!")
