@@ -28,7 +28,8 @@ class Category(testModule):
 
     def exception(self, menu):
         sleep(2)
-        TCFG.driver.terminate_app('com.buzzni.android.subapp.shoppingmoa')
+        TCFG.driver.close_app()
+        # TCFG.driver.terminate_app('com.buzzni.android.subapp.shoppingmoa')
         sleep(1)
         TCFG.driver.launch_app()
         sleep(1)
@@ -193,6 +194,12 @@ class Category(testModule):
                 TCFG.is_finished = True
                 TCFG.is_passed = True
                 break
+
+
+
+
+
+
 
     # def test_05_Food(self):
     #     for loop_count in range(0, TCFG.check_loop_count):
